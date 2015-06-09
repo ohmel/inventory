@@ -1,0 +1,77 @@
+{
+    "success": "true", "message": "Record(s) found", "data": [
+    {
+        "student_id": "1",
+        "student_number": "2005-100102",
+        "student_firstname": "Ohmel",
+        "student_lastname": "Paguirigan",
+        "student_middlename": "Cunanan",
+        "student_gender": "male",
+        "student_birthdate": "1988-02-16",
+        "student_age": "27",
+        "student_complexion": "brown",
+        "student_eye_color": "black",
+        "student_height": "5'6''",
+        "student_religion": "Christian",
+        "course_id": "1",
+        "student_status": "0",
+        "student_bloodtype": "O+",
+        "student_nationality": "Filipino",
+        "student_language": "Tagalog, English",
+        "studentAddress": {
+            "address_id": "1",
+            "address_details": "Blk 29 San Lorenzo Ruiz",
+            "address_street": "Blk 29",
+            "address_province": "Rizal",
+            "address_city": "Taytay",
+            "address_country": "Philippines",
+            "address_zip": "1920",
+            "student_id": "1"
+        },
+        "contactDetails": [
+            {
+                "contact_id": "1",
+                "contact_name": "Cynthia Paguirigan",
+                "contact_relationship": "Mother",
+                "contact_mobile": "09198999095",
+                "contact_tel": "6429163",
+                "contact_address": "Blk 29 lot 8 san juan homes
+                taytay rizal
+                ","student_id
+                ":"1
+                "}],"educationalBackground
+                ":[{"educ_id
+                ":"1
+                ","educ_school_name
+                ":"Rizal
+                High
+                    School
+                Sagad","
+                educ_school_type":"
+                High School
+                ","educ_school_address
+                ":"Sagad
+                Pasig City
+                ","educ_years_attended
+                ": "4",
+                "educ_fromto_date": "2001 - 2005",
+                "educ_extracurricular": "COCC",
+                "educ_position": "Private",
+                "educ_achievements": "Nothing",
+                "student_id": "1"
+            }
+        ],
+        "studentRequirements": [
+            {
+                "requirement_id": "1",
+                "requirement_doc": "Report
+                Card","
+                requirement_date_passed":"
+                2015-04 - 06
+                ","requirement_remarks
+                ":"High
+                School Report
+                Card","
+                student_id"
+:"1"},{"requirement_id":"2","requirement_doc":"Good Moral","requirement_date_passed":"2015-04-06","requirement_remarks"
+:"High School Issue","student_id":"1"}]}]}

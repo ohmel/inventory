@@ -1,0 +1,109 @@
+<nav class="navbar navbar-default" style="height: 55px">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">User List</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="#/addUser" ng-click="setRoute('addUser')" class="navbar-link">
+                        Add User
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" ng-model="q" class="form-control" placeholder="Search User">
+                </div>
+            </form>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<br  ng-hide="loader == 1"/>
+<div ng-hide="loader == 1">
+    <div class="wobblebar">
+        Loading...
+    </div>
+    <br/>
+    Almost there...
+</div>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default row" ng-repeat="user in userManagerService.users | filter:q">
+        <div class="panel-heading" role="tab" id="headingOne">
+            <div class="col-lg-4" style="text-align: left">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" onclick="return false;"
+                       href="#userManagement{{user.user_id}}" aria-expanded="true"
+                       aria-controls="userManagement{{user.user_id}}">
+                        <strong style="font-size: 20px;">{{user.user_fullname}}</strong>
+                    <span style="color: limegreen;font-size: 20px; " ng-if="user.user_status == 1"
+                          class="glyphicon glyphicon-ok"></span>
+                    <span style="color: red;font-size: 20px; " ng-if="user.user_status == 0"
+                          class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <br/>
+                    {{user.user_type}}
+                    <br/>
+                </h4>
+            </div>
+            <div class="col-lg-8" style="text-align: right">
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default"><span style="font-size: 24px;"
+                                                                        class="glyphicon glyphicon-edit"></span>
+                    </button>
+                    <button type="button" class="btn btn-default"><span style="font-size: 24px; color: red; "
+                                                                        class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="clearfix">
+            </div>
+        </div>
+        <div id="userManagement{{user.user_id}}" class="panel-collapse collapse" role="tabpanel"
+             aria-labelledby="headingOne">
+            <div class="panel-body">
+                <h4>User Access</h4>
+                <table class="table">
+                    <tr class="success">
+                        <th scope="row">Admissions</th>
+                        <td><input type="checkbox"> Add Student</td>
+                        <td><input type="checkbox"> Edit Student</td>
+                        <td><input type="checkbox"> Delete Student</td>
+                    </tr>
+                    <tr class="info">
+                        <th scope="row">Registrar</th>
+                        <td><input type="checkbox"> Access1</td>
+                        <td><input type="checkbox"> Access2</td>
+                        <td><input type="checkbox"> Access3</td>
+                    </tr>
+                    <tr class="warning">
+                        <th scope="row">Library</th>
+                        <td><input type="checkbox"> Access1</td>
+                        <td><input type="checkbox"> Access2</td>
+                        <td><input type="checkbox"> Access3</td>
+                    </tr>
+                    <tr class="danger">
+                        <th scope="row">Finance</th>
+                        <td><input type="checkbox"> Access1</td>
+                        <td><input type="checkbox"> Access2</td>
+                        <td><input type="checkbox"> Access3</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

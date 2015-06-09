@@ -1,0 +1,109 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Add User</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="#/userManagement" class="navbar-link">
+                        User List
+                    </a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" ng-model="q" class="form-control" placeholder="Search User">
+                </div>
+            </form>
+
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+<form name="myForm" novalidate>
+    <div class="col-md-5">
+        <div class="form-group">
+            <label for="user_fullname">Full Name</label>
+            <input type="text" name="user_fullname" ng-model="user.user_fullname" class="form-control" id="user_fullname"
+                   placeholder="Full name" required>
+            <span style="color:red" ng-show="myForm.user_fullname.$dirty && myForm.user_fullname.$invalid">
+                <span ng-show="myForm.user_fullname.$error.required">Full name is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="user_name">Username</label>
+            <input type="text" name="user_name" ng-model="user.user_name" class="form-control" id="user_name" placeholder="Username"
+                   required>
+            <span style="color:red" ng-show="myForm.user_name.$dirty && myForm.user_name.$invalid">
+                <span ng-show="myForm.user_name.$error.required">Username is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="user_password">Password</label>
+            <input type="password" name="user_password" ng-model="user.user_password" class="form-control" id="user_password"
+                   placeholder="Password" required>
+            <span style="color:red" ng-show="myForm.user_password.$dirty && myForm.user_password.$invalid">
+                <span ng-show="myForm.user_password.$error.required">Username is required.</span>
+            </span>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input ng-disabled="myForm.user_password.$invalid" type="password" ng-model="user.confirm_password" class="form-control" id="confirm_password"
+                   placeholder="Confirm Password">
+        </div>
+        <div class="form-group">
+            <label for="user_type">User Type</label>
+            <select class="form-control" ng-model="user.user_type" id="user_type">
+                <option>User</option>
+                <option>Administrator</option>
+                <option>Developer</option>
+            </select>
+        </div>
+        <button type="button"  ng-disabled="myForm.user_fullname.$invalid || myForm.user_name.$invalid || myForm.user_password.$invalid || myForm.user_type.$invalid " ng-click="addUser(user)" class="btn btn-success">Register</button>
+    </div>
+    <div class="col-md-7">
+        <br/>
+        <br/>
+        <h4>User Module Access Setup</h4>
+        <table class="table">
+            <tr class="success">
+                <th scope="row">Admissions</th>
+                <td><input type="checkbox"> Add Student</td>
+                <td><input type="checkbox"> Edit Student</td>
+                <td><input type="checkbox"> Delete Student</td>
+            </tr>
+            <tr class="info">
+                <th scope="row">Registrar</th>
+                <td><input type="checkbox"> Access1</td>
+                <td><input type="checkbox"> Access2</td>
+                <td><input type="checkbox"> Access3</td>
+            </tr>
+            <tr class="warning">
+                <th scope="row">Library</th>
+                <td><input type="checkbox"> Access1</td>
+                <td><input type="checkbox"> Access2</td>
+                <td><input type="checkbox"> Access3</td>
+            </tr>
+            <tr class="danger">
+                <th scope="row">Finance</th>
+                <td><input type="checkbox"> Access1</td>
+                <td><input type="checkbox"> Access2</td>
+                <td><input type="checkbox"> Access3</td>
+            </tr>
+        </table>
+        <pre>{{user}}</pre>
+    </div>
+
+</form>
