@@ -1,7 +1,6 @@
 <div style="text-align: center; margin-bottom: 145px">
     <br/>
     <div class="form" style="display: inline-block">
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png">
         <?php $form=$this->beginWidget('CActiveForm', array(
             'id'=>'login-form',
             'enableClientValidation'=>true,
@@ -10,6 +9,8 @@
             ),
         )); ?>
         <div class="login-form row" style="width: 600px">
+            <h2 style="color: white"> Inventory System <i class="fa fa-line-chart"></i></h2>
+            <hr/>
             <div class="col-lg-8 text-align-left" style="border-right: 2px solid white;">
                 <div class="form-group">
                     <?php echo $form->textField($model,'username', array('class' => 'username form-control', 'placeholder'=>'Username')); ?>
@@ -32,7 +33,7 @@
                 </div>
             </div>
             <div class="col-lg-4 text-align-left" style="color: white">
-                Login here!
+                <i class="fa fa-bar-chart" style="font-size: 160px;"></i>
             </div>
 
         </div>

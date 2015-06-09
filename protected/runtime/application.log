@@ -5142,3 +5142,25 @@ Stack trace:
 REQUEST_URI=/lcs/index.php/studentMonitoring/%7B%7Bglobals.rootUrl%7D%7D/images/defaults/studentdefault.png
 HTTP_REFERER=http://localhost/lcs/index.php/studentMonitoring/index
 ---
+2015/06/09 18:54:50 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "C:\xampp\htdocs\inventory\assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in C:\xampp\htdocs\yii\framework\web\CAssetManager.php:116
+Stack trace:
+#0 C:\xampp\htdocs\yii\framework\web\CAssetManager.php(101): CAssetManager->setBasePath('C:\xampp\htdocs...')
+#1 C:\xampp\htdocs\yii\framework\web\CAssetManager.php(219): CAssetManager->getBasePath()
+#2 C:\xampp\htdocs\yii\framework\web\CClientScript.php(449): CAssetManager->publish('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii\framework\web\CClientScript.php(486): CClientScript->getCoreScriptUrl()
+#4 C:\xampp\htdocs\yii\framework\web\CClientScript.php(302): CClientScript->getPackageBaseUrl('jquery')
+#5 C:\xampp\htdocs\yii\framework\web\CClientScript.php(195): CClientScript->renderCoreScripts()
+#6 C:\xampp\htdocs\yii\framework\web\CController.php(352): CClientScript->render('<!DOCTYPE html ...')
+#7 C:\xampp\htdocs\yii\framework\web\CController.php(789): CController->processOutput('<!DOCTYPE html ...')
+#8 C:\xampp\htdocs\inventory\protected\controllers\SiteController.php(117): CController->render('login', Array)
+#9 C:\xampp\htdocs\yii\framework\web\actions\CInlineAction.php(50): SiteController->actionLogin()
+#10 C:\xampp\htdocs\yii\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\yii\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\yii\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(276): CController->run('login')
+#14 C:\xampp\htdocs\yii\framework\web\CWebApplication.php(135): CWebApplication->runController('site/login')
+#15 C:\xampp\htdocs\yii\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\inventory\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/inventory/index.php/site/login
+---
